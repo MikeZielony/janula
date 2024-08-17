@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agroturystyka Janula - Wypoczynek na wsi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Kolory inspirowane naturą i ekologią */
+        :root {
+            --primary-color: #4C8C4A; /* Ziemista zieleń */
+            --secondary-color: #A5C99A; /* Jasna zieleń */
+            --accent-color: #F7EDD3; /* Delikatny kremowy */
+            --text-color: #3D3D3D; /* Ciemny szary */
+            --background-color: #F2F2F2; /* Jasne tło */
+            --highlight-color: #A25F2B; /* Kolor ciepłego brązu */
+            --facebook-color: #3b5998; /* Kolor Facebooka */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--highlight-color);
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: var(--accent-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--highlight-color);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .promo-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .promo-section h2 {
+            color: var(--primary-color);
+        }
+
+        .promo-section p {
+            font-size: 18px;
+            margin-top: 10px;
+            color: var(--text-color);
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .kontakt-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: var(--facebook-color);
+            text-decoration: none;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .social-links a:hover {
+            color: var(--highlight-color);
+        }
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: var(--facebook-color);
+            text-decoration: none;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .social-links a:hover {
+            color: var(--highlight-color);
+        }
+        .back-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #4C8C4A; /* Ziemista zieleń */
+            color: #F7EDD3; /* Delikatny kremowy */
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #3b6f36; /* Ciemniejsza zieleń */
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        }
+        .back-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #4C8C4A, #A5C99A);
+            color: #F7EDD3;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-size: 200% 200%;
+            animation: gradientAnimation 5s ease infinite;
+        }
+
+        /* Animacja gradientu */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .back-button:hover {
+            transform: translateY(-5px); /* Efekt przeskakiwania */
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animacja pulsowania */
+        .back-button:active {
+            animation: pulse 0.2s;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Agroturystyka Janula</h1>
+        <p>Autentyczne smaki tradycyjnej kuchni polskiej</p>
+    </header>
+    <nav>
+        <a href="#menu">Menu</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#galeria">Galeria</a>
+    </nav>
+
+    <section class="promo-section">
+        <h2>Wypoczynek na Wsi</h2>
+        <p>Odkryj piękno natury i ciszę w naszej agroturystyce. Idealne miejsce na relaks z dala od zgiełku miasta.</p>
+        <p>Spędź niezapomniane chwile w sercu polskiej wsi, ciesząc się świeżym powietrzem, pysznym jedzeniem i spokojem.</p>
+
+        <div class="gallery">
+            <img src="https://scontent.fwaw8-1.fna.fbcdn.net/v/t39.30808-6/347252116_297129759320593_8560977018653012735_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=IF1_hGS4W88Q7kNvgHStZZz&_nc_ht=scontent.fwaw8-1.fna&oh=00_AYAv6zLu1XXjSr3D1i0OXh-Fot92e-iVjWl8aOXd9-GkfQ&oe=66C51D12" alt="Agroturystyka 1">
+            <img src="https://scontent.fwaw8-1.fna.fbcdn.net/v/t39.30808-6/225124045_123920166604454_1032015270410137018_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=7rzv2_f1EhQQ7kNvgE_YH-u&_nc_ht=scontent.fwaw8-1.fna&oh=00_AYDyicPmkRCRfRHvaNquvpO7jWkV1Isg77I6-Vwh_DS24w&oe=66C52004" alt="Agroturystyka 2">
+            <img src="https://via.placeholder.com/300x200" alt="Agroturystyka 1">
+            <img src="https://via.placeholder.com/300x200" alt="Agroturystyka 1">
+            <img src="https://via.placeholder.com/300x200" alt="Agroturystyka 1">
+            <img src="https://via.placeholder.com/300x200" alt="Agroturystyka 1">
+            <img src="https://via.placeholder.com/300x200" alt="Agroturystyka 1">
+        </div>
+        <a href="strona2.html" class="back-button">Powrót do Strony Głównej</a>
+    </section>
+
+    <section id="godziny-otwarcia">
+        <h2>Godziny Otwarcia</h2>
+        <ul id="godziny-lista"></ul>
+    </section>
+
+    <section id="menu">
+        <h2>Menu</h2>
+        <h3>Przystawki</h3>
+        <ul id="przystawki-lista"></ul>
+        <h3>Zupy</h3>
+        <ul id="zupy-lista"></ul>
+        <h3>Dania Główne</h3>
+        <ul id="dania-glowne-lista"></ul>
+        <h3>Desery</h3>
+        <ul id="desery-lista"></ul>
+    </section>
+    <a href="strona2.html" class="back-button">Powrót do Strony Głównej</a>
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <p>Adres: <span id="adres"></span></p>
+        <p>Telefon: <span id="telefon"></span></p>
+        <p>Email: <span id="email"></span></p>
+        <a href="https://www.facebook.com/smaktradycji" target="_blank"><i class="fab fa-facebook"></i> Odwiedź nas na Facebooku</a>
+
+    </section>
+    <div class="social-links">
+    </div>
+    <a href="strona2.html" class="back-button">Powrót do Strony Głównej</a>
+    <script>
+        // Godziny otwarcia
+        const godzinyOtwarcia = [
+            { dzien: "Poniedziałek - Piątek", godziny: "11:00 - 22:00" },
+            { dzien: "Sobota", godziny: "12:00 - 23:00" },
+            { dzien: "Niedziela", godziny: "12:00 - 21:00" }
+        ];
+
+        const godzinyLista = document.getElementById('godziny-lista');
+        godzinyOtwarcia.forEach(godzina => {
+            const li = document.createElement('li');
+            li.textContent = `${godzina.dzien}: ${godzina.godziny}`;
+            godzinyLista.appendChild(li);
+        });
+
+        // Menu
+        const menu = {
+            przystawki: [
+                { nazwa: "Krewetki w Sosie Czosnkowym", cena: "35 zł" },
+                { nazwa: "Tatar wołowy", cena: "28 zł" },
+                { nazwa: "Bruschetta z pomidorami i bazylią", cena: "18 zł" }
+            ],
+            zupy: [
+                { nazwa: "Żurek staropolski", cena: "18 zł" },
+                { nazwa: "Zupa krem z dyni", cena: "15 zł" }
+            ],
+            daniaGlowne: [
+                { nazwa: "Schabowy z ziemniakami i kapustą", cena: "42 zł" },
+                { nazwa: "Pierogi ruskie", cena: "25 zł" },
+                { nazwa: "Grillowana pierś z kurczaka", cena: "38 zł" }
+            ],
+            desery: [
+                { nazwa: "Sernik na zimno", cena: "16 zł" },
+                { nazwa: "Szarlotka z lodami", cena: "18 zł" },
+                { nazwa: "Panna Cotta z owocami leśnymi", cena: "20 zł" }
+            ]
+        };
+
+        const przystawkiLista = document.getElementById('przystawki-lista');
+        const zupyLista = document.getElementById('zupy-lista');
+        const daniaGlowneLista = document.getElementById('dania-glowne-lista');
+        const deseryLista = document.getElementById('desery-lista');
+
+        menu.przystawki.forEach(przystawka => {
+            const li = document.createElement('li');
+            li.textContent = `${przystawka.nazwa} - ${przystawka.cena}`;
+            przystawkiLista.appendChild(li);
+        });
+
+        menu.zupy.forEach(zupa => {
+            const li = document.createElement('li');
+            li.textContent = `${zupa.nazwa} - ${zupa.cena}`;
+            zupyLista.appendChild(li);
+        });
+
+        menu.daniaGlowne.forEach(danie => {
+            const li = document.createElement('li');
+            li.textContent = `${danie.nazwa} - ${danie.cena}`;
+            daniaGlowneLista.appendChild(li);
+        });
+
+        menu.desery.forEach(deser => {
+            const li = document.createElement('li');
+            li.textContent = `${deser.nazwa} - ${deser.cena}`;
+            deseryLista.appendChild(li);
+        });
+
+        // Dane kontaktowe
+        const kontakt = {
+            adres: "ul. Smakoszy 12, 00-123 Warszawa",
+            telefon: "+48 123 456 789",
+            email: "kontakt@smaktradycji.pl"
+        };
+
+        document.getElementById('adres').textContent = kontakt.adres;
+        document.getElementById('telefon').textContent = kontakt.telefon;
+        document.getElementById('email').textContent = kontakt.email;
+    </script>
+
+</body>
+</html>
