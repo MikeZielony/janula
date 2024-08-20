@@ -435,24 +435,7 @@
         document.getElementById('telefon').textContent = kontakt.telefon;
         document.getElementById('email').textContent = kontakt.email;
 
-         // Pobranie elementów z DOM
-        const modal = document.getElementById("modal");
-        const modalImg = document.getElementById("modal-image");
-        const closeBtn = document.querySelector(".close");
-        const images = document.querySelectorAll(".gallery img");
-
-        // Funkcja otwierająca modal po kliknięciu na zdjęcie
-        images.forEach(image => {
-            image.addEventListener("click", () => {
-                modal.style.display = "flex";
-                modalImg.src = image.src;
-            });
-        });
-
-        // Funkcja zamykająca modal po kliknięciu na "x"
-        closeBtn.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
+        
 
         // Funkcja zamykająca modal po kliknięciu poza obrazem
         modal.addEventListener("click", (e) => {
