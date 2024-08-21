@@ -17,11 +17,32 @@
             --highlight-color: #A25F2B; /* Kolor ciepłego brązu */
             --facebook-color: #3b5998; /* Kolor Facebooka */
         }
-        .menu {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
+         /* Stylizacja menu */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #4CAF50; /* Zielony kolor nawiązujący do natury */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
         }
+
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+
 
           body {
             font-family: Arial, sans-serif;
@@ -31,30 +52,11 @@
         }
 
         header {
+            width: 100%;
             background-color: var(--primary-color);
             color: var(--accent-color);
             padding: 20px;
             text-align: center;
-        }
-
-        nav {
-            text-align: center;
-            background-color: var(--secondary-color);
-            padding: 10px 0;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        nav a {
-            margin: 0 15px;
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: var(--highlight-color);
         }
 
         .gallery {
@@ -63,7 +65,7 @@
             align-items: center;
             gap: 10px;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 5%;
         }
 
         .gallery img {
@@ -71,6 +73,9 @@
             cursor: pointer;
             border-radius: 5px;
             transition: transform 0.3s;
+        }
+        menu {
+            
         }
 
         .gallery img:hover {
@@ -83,7 +88,7 @@
             position: fixed;
             z-index: 1000;
             left: 0;
-            top: 0;
+            top: 5%;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8);
@@ -126,7 +131,7 @@
         }
         
         section {  
-            padding: 20px;
+            padding: 40px;
             margin: 20px;
             background-color: var(--accent-color);
             border-radius: 8px;
@@ -275,7 +280,6 @@
     </style>
 </head>
 <body>
-
     <header>
         <h1>Agroturystyka Janula</h1>
         <p>Autentyczne smaki tradycyjnej kuchni polskiej</p>
@@ -283,18 +287,18 @@
     <nav>
         <a href="#menu">Menu</a>
         <a href="#kontakt">Kontakt</a>
-       <!-- <a href="#galeria">Galeria</a> -->
+        <a href="#gallery">Galeria</a> 
+        <a href="#godziny-otwarcia">Otwarte</a>
     </nav>
+
+   
 
     <section class="promo-section">
         <h2>Wypoczynek na Wsi</h2>
         <p>Odkryj piękno natury i ciszę w naszej agroturystyce. Idealne miejsce na relaks z dala od zgiełku miasta.</p>
         <p>Spędź niezapomniane chwile w sercu polskiej wsi, ciesząc się świeżym powietrzem, pysznym jedzeniem i spokojem.</p>
 
-        <div class="gallery">
-            
-
-
+        <section id="gallery">
     <div class="gallery">
         <img src="https://scontent.fwaw8-1.fna.fbcdn.net/v/t39.30808-6/347252116_297129759320593_8560977018653012735_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=IF1_hGS4W88Q7kNvgHStZZz&_nc_ht=scontent.fwaw8-1.fna&oh=00_AYAv6zLu1XXjSr3D1i0OXh-Fot92e-iVjWl8aOXd9-GkfQ&oe=66C51D12" alt="Zdjęcie 1">
             <img src="https://scontent.fwaw8-1.fna.fbcdn.net/v/t39.30808-6/225124045_123920166604454_1032015270410137018_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=7rzv2_f1EhQQ7kNvgE_YH-u&_nc_ht=scontent.fwaw8-1.fna&oh=00_AYDyicPmkRCRfRHvaNquvpO7jWkV1Isg77I6-Vwh_DS24w&oe=66C52004" alt="Zdjęcie 2">
@@ -315,6 +319,9 @@
     </section>
 
     <section id="godziny-otwarcia">
+        <a> </a>
+        <a> </a>
+        <a> </a>
         <h2>Godziny Otwarcia</h2>
         <ul id="godziny-lista"></ul>
     </section>
