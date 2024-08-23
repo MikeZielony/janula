@@ -18,25 +18,24 @@
             --facebook-color: #3b5998; /* Kolor Facebooka */
         }
          /* Stylizacja menu */
-        nav {
+         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            height: 3%;
-            background-color: #4CAF50; /* Zielony kolor nawiązujący do natury */
+            background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 15px 0;
+            padding: 10px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             z-index: 1001;
         }
 
         nav a {
-            margin: 0 15px;
+            margin: 0 10px;
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         nav a:hover {
@@ -66,7 +65,7 @@
 
         .gallery {
             display: flex;
-            flex-direction: row;
+            flex-wrap: wrap;
             align-items: center;
             gap: 10px;
             justify-content: center;
@@ -278,6 +277,74 @@
                 transform: scale(1);
             }
             
+        }
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav a {
+                font-size: 14px;
+            }
+
+            .promo-section {
+                padding: 15px;
+            }
+
+            .promo-section p {
+                font-size: 14px;
+            }
+
+            .gallery {
+                flex-direction: column;
+            }
+
+            .gallery img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .back-button {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            section {
+                margin: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 12px;
+            }
+
+            .promo-section p {
+                font-size: 12px;
+            }
+
+            .back-button {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            section {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .social-links a {
+                font-size: 18px;
+            }
+
+            nav {
+                padding: 5px;
+            }
         }
          
     </style>
